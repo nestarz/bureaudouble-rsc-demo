@@ -2,9 +2,9 @@
 import incrementLike from "@/app/actions/incrementLike.ts";
 import { useState, useTransition } from "react";
 
-export function LikeButton() {
+export function LikeButton({ initialLikeCount }: { initialLikeCount: number }) {
   const [isPending, startTransition] = useTransition();
-  const [likeCount, setLikeCount] = useState(0);
+  const [likeCount, setLikeCount] = useState(initialLikeCount);
 
   const onClick = () => {
     startTransition(async () => {

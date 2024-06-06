@@ -1,7 +1,8 @@
 "use server";
 
-let likeCount = 0;
+const kv = await Deno.openKv();
 export default async function incrementLike() {
-  likeCount++;
-  return likeCount;
+  const likeCount = (await kv.get<number>(["likes"])).value ?? 0;
+  await kv.set(["likes"], likeCount + 1);
+  return likeCount + 1;
 }

@@ -58,6 +58,12 @@
     },
     "./build/": {
       "@bureaudouble/rsc-engine/react.react-server": "npm:react@19.0.0-rc.0"
+    },
+    "./app/pages/index.tsx": {
+      "@/app/components/like-button.tsx": "./build/default/references/like-button-1979667020.ts"
+    },
+    "./main.ts": {
+      "@/app/actions/incrementLike.ts": "./build/default/references/incrementLike-1969148866.ts"
     }
   },
   "shadcn-ui": {
