@@ -10,7 +10,6 @@ export const tailwindClient = await createTailwindClient({
   tailwindConfig: (importNSA) => importNSA("@/tailwind.config.ts"),
   outDirectory: "./build/.tailwind/",
 });
-globalThis.addEventListener("hmr", console.log);
 
 const clientRsc = await setupClientComponents({
   minify: !Deno.env.get("DEV_ENV"),
