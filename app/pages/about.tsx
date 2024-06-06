@@ -1,4 +1,4 @@
-import RootLayout from "@/src/pages/_layout.tsx";
+import RootLayout from "@/app/pages/_layout.tsx";
 
 export default async function AboutPage() {
   const data = await getData();

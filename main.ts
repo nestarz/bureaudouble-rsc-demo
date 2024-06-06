@@ -2,7 +2,7 @@ import { createRouter } from "@fartlabs/rt";
 import { setupClientComponents } from "@bureaudouble/rsc-engine";
 import { createTailwindClient } from "@bureaudouble/outils/tailwind/createTailwindClient.ts";
 import { createStaticHandler } from "@bureaudouble/outils/routes/createStaticHandler.ts";
-import { withRouteContext } from "@/src/components/route-context.tsx";
+import { withRouteContext } from "@/app/components/route-context.tsx";
 
 export const tailwindClient = await createTailwindClient({
   namespace: "default",
@@ -18,7 +18,7 @@ const clientRsc = await setupClientComponents({
   entryPoint: import.meta.url,
   moduleBaseURL: import.meta.resolve("./"),
   importMap: import.meta.resolve("./deno.json"),
-  bootstrapModules: [import.meta.resolve("./src/client.tsx")],
+  bootstrapModules: [import.meta.resolve("./app/client.tsx")],
   external: [],
 });
 
@@ -32,12 +32,12 @@ const router = createRouter()
         {
           method: "GET",
           pathname: "/",
-          handle: () => import("@/src/pages/index.tsx"),
+          handle: () => import("./app/pages/index.tsx"),
         },
         {
           method: "GET",
           pathname: "/about{/}?",
-          handle: () => import("@/src/pages/about.tsx"),
+          handle: () => import("./app/pages/about.tsx"),
         },
         {
           method: "POST",

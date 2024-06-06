@@ -1,5 +1,5 @@
-import { Header } from "@/src/components/header.tsx";
-import { Footer } from "@/src/components/footer.tsx";
+import { Header } from "@/app/components/header.tsx";
+import { Footer } from "@/app/components/footer.tsx";
 import { tailwindClient } from "@/main.ts";
 
 type RootLayoutProps = { children?: JSX.Element | JSX.Element[] };

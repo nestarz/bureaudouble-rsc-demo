@@ -1,5 +1,5 @@
 "use client";
-import incrementLike from "@/src/actions/incrementLike.ts";
+import incrementLike from "@/app/actions/incrementLike.ts";
 import { useState, useTransition } from "react";
 
 export function LikeButton() {

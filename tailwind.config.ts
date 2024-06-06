@@ -1,5 +1,5 @@
 export default {
-  content: [import.meta.dirname?.concat("/src/**/*.{ts,tsx}")],
+  content: [import.meta.dirname?.concat("/app/**/*.{ts,tsx}")],
 };
 
 export const globalCss = /* css */ `

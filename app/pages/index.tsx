@@ -1,5 +1,5 @@
-import { LikeButton } from "@/src/components/like-button.tsx";
-import RootLayout from "@/src/pages/_layout.tsx";
+import { LikeButton } from "@/app/components/like-button.tsx";
+import RootLayout from "@/app/pages/_layout.tsx";
 
 export default async function HomePage() {
   const data = await getData();
