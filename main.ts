@@ -59,3 +59,6 @@ const router = createRouter()
 Deno.args.some((v) => v === "build")
   ? Deno.exit(0)
   : Deno.serve((request) => router.fetch(request));
+
+// server actions needs to be statically analyzable
+(() => import("@/app/actions/incrementLike.ts"));
