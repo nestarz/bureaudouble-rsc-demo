@@ -23,7 +23,7 @@
     "@/": "./",
     "@bureaudouble/rsc-engine": "jsr:@bureaudouble/rsc-engine@0.0.95",
     "@bureaudouble/rsc-engine/": "jsr:/@bureaudouble/rsc-engine@0.0.95/",
-    "@bureaudouble/outils/": "jsr:/@bureaudouble/outils@0.0.81/",
+    "@bureaudouble/outils/": "jsr:/@bureaudouble/outils@0.0.82/",
     "@fartlabs/rt": "jsr:@fartlabs/rt@0.0.3",
     "@std/path/": "jsr:/@std/path@0.224/",
     "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.10",
@@ -88,5 +88,5 @@
       }
     }
   },
-  "rscUpdateId": "2024-06-07T16:49:21.593Z"
+  "rscUpdateId": "2024-06-07T18:20:15.659Z"
 }
