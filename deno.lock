@@ -1319,7 +1319,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@bureaudouble-forks/react-error-boundary@0.0.1",
-      "jsr:@bureaudouble/outils@0.0.82",
+      "jsr:@bureaudouble/outils@0.0.83",
       "jsr:@bureaudouble/rsc-engine@0.0.95",
       "jsr:@fartlabs/rt@0.0.3",
       "jsr:@std/path@0.224",
