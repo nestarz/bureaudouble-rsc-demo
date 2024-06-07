@@ -11,7 +11,7 @@ export default async function HomePage() {
       <p>{data.body}</p>
       <LikeButton initialLikeCount={data.likeCount ?? 0} />
       <a href="/about" className="mt-4 inline-block underline">
-        About page
+        About page1234 lol ssssa HAHAssaasas lols i ok
       </a>
     </RootLayout>
   );

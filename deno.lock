@@ -2,10 +2,10 @@
   "version": "3",
   "packages": {
     "specifiers": {
-      "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+nestarz.quiet.0.0.3": "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+pr0.0.4",
+      "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+nestarz.quiet.0.0.3": "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+nestarz.quiet.0.0.3",
       "jsr:@bureaudouble-forks/importmap@0.2.1": "jsr:@bureaudouble-forks/importmap@0.2.1",
       "jsr:@bureaudouble/outils@0.0.78": "jsr:@bureaudouble/outils@0.0.78",
-      "jsr:@bureaudouble/rsc-engine@0.0.86": "jsr:@bureaudouble/rsc-engine@0.0.86",
+      "jsr:@bureaudouble/rsc-engine@0.0.88": "jsr:@bureaudouble/rsc-engine@0.0.88",
       "jsr:@bureaudouble/scripted@0.0.2": "jsr:@bureaudouble/scripted@0.0.2",
       "jsr:@fartlabs/rt@0.0.3": "jsr:@fartlabs/rt@0.0.3",
       "jsr:@std/assert@^0.213.1": "jsr:@std/assert@0.213.1",
@@ -31,8 +31,8 @@
       "npm:types-react@alpha": "npm:types-react@19.0.0-alpha.5"
     },
     "jsr": {
-      "@bureaudouble-forks/esbuild-deno-loader@0.10.3+pr0.0.4": {
-        "integrity": "b4e6ee566f745c6b1ebe7b606535954b2c66b5ff440ca96ed58aa19e4b988fd8",
+      "@bureaudouble-forks/esbuild-deno-loader@0.10.3+nestarz.quiet.0.0.3": {
+        "integrity": "b02736d46fea2a76370dc547c946632dd990dce78824d420a351ba14baf418d6",
         "dependencies": [
           "jsr:@std/encoding@0.213",
           "jsr:@std/jsonc@0.213",
@@ -54,12 +54,11 @@
           "npm:tailwindcss@^3.4.3"
         ]
       },
-      "@bureaudouble/rsc-engine@0.0.86": {
-        "integrity": "4e531dcd6539b80b907a7ce5aa9d332b6a02805bf3941e99dd8414504f40f912",
+      "@bureaudouble/rsc-engine@0.0.88": {
+        "integrity": "dfec7cb32b86b7c447bd9936428de8a0a3092d816291c85c77835e00e4806a6b",
         "dependencies": [
           "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+nestarz.quiet.0.0.3",
           "jsr:@bureaudouble-forks/importmap@0.2.1",
-          "jsr:@bureaudouble/rsc-engine@0.0.86",
           "jsr:@bureaudouble/scripted@0.0.2",
           "jsr:@std/path@0.224.0",
           "jsr:@teemukurki/rate-limiter@^0.0.3",
@@ -1335,7 +1334,7 @@
     "dependencies": [
       "jsr:@bureaudouble-forks/react-error-boundary@0.0.1",
       "jsr:@bureaudouble/outils@0.0.78",
-      "jsr:@bureaudouble/rsc-engine@0.0.86",
+      "jsr:@bureaudouble/rsc-engine@0.0.88",
       "jsr:@fartlabs/rt@0.0.3",
       "jsr:@std/path@0.224",
       "npm:@tailwindcss/typography@^0.5.10",

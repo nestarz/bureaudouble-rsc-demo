@@ -1,15 +1,7 @@
 import { createRouter } from "@fartlabs/rt";
 import { setupClientComponents } from "@bureaudouble/rsc-engine";
-import { createTailwindClient } from "@bureaudouble/outils/tailwind/createTailwindClient.ts";
 import { createStaticHandler } from "@bureaudouble/outils/routes/createStaticHandler.ts";
 import { withRouteContext } from "@/app/components/route-context.tsx";
-
-export const tailwindClient = await createTailwindClient({
-  namespace: "default",
-  baseUrl: new URL(".", import.meta.url).href,
-  tailwindConfig: (importNSA) => importNSA("@/tailwind.config.ts"),
-  outDirectory: "./build/.tailwind/",
-});
 
 const clientRsc = await setupClientComponents({
   minify: !Deno.env.get("DEV_ENV"),
@@ -21,28 +13,21 @@ const clientRsc = await setupClientComponents({
   external: [],
 });
 
+const layout = await import("@/app/pages/_layout.tsx");
+const index = await import("@/app/pages/index.tsx").then((v) => () => v);
+const about = await import("@/app/pages/about.tsx").then((v) => () => v);
+const actions = () => Promise.reject("'use server only'");
+
 const router = createRouter()
   .with(clientRsc.route)
-  .get("/styles/:id", tailwindClient.getResponse)
+  .get("/styles/:id", layout.tailwindClient.getResponse)
   .get("/static/*", createStaticHandler({ baseUrl: import.meta.url }))
   .use(
     (
       [
-        {
-          method: "GET",
-          pathname: "/",
-          handle: () => import("./app/pages/index.tsx"),
-        },
-        {
-          method: "GET",
-          pathname: "/about{/}?",
-          handle: () => import("./app/pages/about.tsx"),
-        },
-        {
-          method: "POST",
-          pathname: "/actions{/}?",
-          handle: () => Promise.reject("'use server only'"),
-        },
+        { method: "GET", pathname: "/", handle: index },
+        { method: "GET", pathname: "/about{/}?", handle: about },
+        { method: "POST", pathname: "/actions{/}?", handle: actions },
       ] as const
     )
       .map(({ method, handle, pathname }) => ({

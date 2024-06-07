@@ -15,13 +15,13 @@ export function LikeButton({ initialLikeCount }: { initialLikeCount: number }) {
 
   return (
     <>
-      <p>Total Likes: {likeCount}</p>
+      <p>Total LOL haha msaodr Lik okmdr lols ici lo2l icidad s okdsa mdr msdsddr ICI MDR lol mdra ses: {likeCount}</p>
       <button
         onClick={onClick}
         disabled={isPending}
         className="bg-black text-white p-4"
       >
-        Like
+        Likeok
       </button>
     </>
   );

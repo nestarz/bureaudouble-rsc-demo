@@ -1,8 +1,15 @@
+import { createTailwindClient } from "@bureaudouble/outils/tailwind/createTailwindClient.ts";
 import { Header } from "@/app/components/header.tsx";
 import { Footer } from "@/app/components/footer.tsx";
-import { tailwindClient } from "@/main.ts";
 
 type RootLayoutProps = { children?: JSX.Element | JSX.Element[] };
+
+export const tailwindClient = await createTailwindClient({
+  namespace: "default",
+  baseUrl: new URL(".", import.meta.url).href,
+  tailwindConfig: (importNSA) => importNSA("@/tailwind.config.ts"),
+  outDirectory: "./build/.tailwind/",
+});
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   const data = await getData();

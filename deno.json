@@ -1,11 +1,12 @@
 {
   "tasks": {
-    "start": "deno run -A --unstable-kv --unstable-temporal --env main.ts",
+    "start": "deno run -A --unstable-hmr --no-clear-screen --unstable-kv --unstable-temporal --env main.ts",
     "shadcn": "deno run --allow-write --allow-run --allow-read jsr:@bureaudouble/outils/shadcn.ts"
   },
   "unstable": [
     "temporal"
   ],
+  "vendor": true,
   "compilerOptions": {
     "lib": [
       "dom",
@@ -20,22 +21,22 @@
   },
   "imports": {
     "@/": "./",
-    "@bureaudouble/rsc-engine": "jsr:@bureaudouble/rsc-engine@0.0.86",
-    "@bureaudouble/rsc-engine/": "jsr:/@bureaudouble/rsc-engine@0.0.86/",
+    "@bureaudouble/rsc-engine": "jsr:@bureaudouble/rsc-engine@0.0.88",
+    "@bureaudouble/rsc-engine/": "jsr:/@bureaudouble/rsc-engine@0.0.88/",
     "@bureaudouble/outils/": "jsr:/@bureaudouble/outils@0.0.78/",
     "@fartlabs/rt": "jsr:@fartlabs/rt@0.0.3",
     "@std/path/": "jsr:/@std/path@0.224/",
     "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.10",
     "@types/react": "npm:types-react@alpha",
     "@types/react-dom": "npm:types-react-dom@alpha",
-    "react": "jsr:@bureaudouble/rsc-engine@0.0.86/react.forker",
-    "npm:react@19.0.0-rc.0": "jsr:@bureaudouble/rsc-engine@0.0.86/react.forker",
+    "react": "jsr:@bureaudouble/rsc-engine@0.0.88/react.forker",
+    "npm:react@19.0.0-rc.0": "jsr:@bureaudouble/rsc-engine@0.0.88/react.forker",
     "react-dom/": "npm:/react-dom@19.0.0-rc.0/",
     "react-error-boundary": "jsr:@bureaudouble-forks/react-error-boundary@0.0.1",
-    "react-server-dom-esm/client.browser": "jsr:@bureaudouble/rsc-engine@0.0.86/react-server-dom-esm/client.browser",
-    "react-server-dom-esm/node-loader": "jsr:@bureaudouble/rsc-engine@0.0.86/react-server-dom-esm/node-loader",
-    "react-server-dom-esm/server.edge": "jsr:@bureaudouble/rsc-engine@0.0.86/react-server-dom-esm/server.edge",
-    "react-server-dom-esm/server.node": "jsr:@bureaudouble/rsc-engine@0.0.86/react-server-dom-esm/server.node",
+    "react-server-dom-esm/client.browser": "jsr:@bureaudouble/rsc-engine@0.0.88/react-server-dom-esm/client.browser",
+    "react-server-dom-esm/node-loader": "jsr:@bureaudouble/rsc-engine@0.0.88/react-server-dom-esm/node-loader",
+    "react-server-dom-esm/server.edge": "jsr:@bureaudouble/rsc-engine@0.0.88/react-server-dom-esm/server.edge",
+    "react-server-dom-esm/server.node": "jsr:@bureaudouble/rsc-engine@0.0.88/react-server-dom-esm/server.node",
     "react/": "npm:/react@19.0.0-rc.0/",
     "rsc-html-stream": "npm:rsc-html-stream@^0.0.3",
     "rsc-html-stream/": "npm:/rsc-html-stream@^0.0.3/",
@@ -47,23 +48,23 @@
     "https://jsr.io/": {
       "npm:@types/react@^18.2.0": "npm:types-react@alpha",
       "npm:@types/react-dom@^18.2.0": "npm:types-react-dom@alpha",
-      "npm:react@^18.2.0": "jsr:@bureaudouble/rsc-engine@0.0.86/react.forker",
+      "npm:react@^18.2.0": "jsr:@bureaudouble/rsc-engine@0.0.88/react.forker",
       "npm:/react@^18.2.0/jsx-runtime": "npm:/react@19.0.0-rc.0/jsx-runtime",
       "npm:react-dom@^18.2.0": "npm:react-dom@19.0.0-rc.0",
       "npm:/react-dom@^18.2.0/client": "npm:/react-dom@19.0.0-rc.0/client",
       "npm:/react-dom@^18.2.0": "npm:/react-dom@19.0.0-rc.0/"
     },
-    "https://jsr.io/@bureaudouble/rsc-engine/0.0.86/react.forker.ts": {
+    "https://jsr.io/@bureaudouble/rsc-engine/0.0.88/react.forker.ts": {
       "npm:react@19.0.0-rc.0": "npm:react@19.0.0-rc.0"
     },
     "./build/": {
       "@bureaudouble/rsc-engine/react.react-server": "npm:react@19.0.0-rc.0"
     },
     "./app/pages/index.tsx": {
-      "@/app/components/like-button.tsx": "./build/default/references/like-button-1979667020.ts"
+      "@/app/components/like-button.tsx": "./build/default/references/like-button-187379778.ts"
     },
     "./main.ts": {
-      "@/app/actions/incrementLike.ts": "./build/default/references/incrementLike-1969148866.ts"
+      "@/app/actions/incrementLike.ts": "./build/default/references/incrementLike-289692353.ts"
     }
   },
   "shadcn-ui": {
