@@ -4,8 +4,8 @@
     "specifiers": {
       "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+nestarz.quiet.0.0.3": "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+pr0.0.4",
       "jsr:@bureaudouble-forks/importmap@0.2.1": "jsr:@bureaudouble-forks/importmap@0.2.1",
-      "jsr:@bureaudouble/outils@0.0.78": "jsr:@bureaudouble/outils@0.0.78",
-      "jsr:@bureaudouble/rsc-engine@0.0.89": "jsr:@bureaudouble/rsc-engine@0.0.89",
+      "jsr:@bureaudouble/outils@0.0.79": "jsr:@bureaudouble/outils@0.0.79",
+      "jsr:@bureaudouble/rsc-engine@0.0.90": "jsr:@bureaudouble/rsc-engine@0.0.90",
       "jsr:@bureaudouble/scripted@0.0.2": "jsr:@bureaudouble/scripted@0.0.2",
       "jsr:@fartlabs/rt@0.0.3": "jsr:@fartlabs/rt@0.0.3",
       "jsr:@std/assert@^0.213.1": "jsr:@std/assert@0.213.1",
@@ -25,7 +25,6 @@
       "npm:react-dom@19.0.0-rc.0": "npm:react-dom@19.0.0-rc.0_react@19.0.0-rc.0",
       "npm:react@19.0.0-rc.0": "npm:react@19.0.0-rc.0",
       "npm:rsc-html-stream@^0.0.3": "npm:rsc-html-stream@0.0.3",
-      "npm:tailwindcss@^3.2.4": "npm:tailwindcss@3.4.3_postcss@8.4.38",
       "npm:tailwindcss@^3.4.3": "npm:tailwindcss@3.4.3_postcss@8.4.38",
       "npm:types-react-dom@alpha": "npm:types-react-dom@19.0.0-alpha.5",
       "npm:types-react@alpha": "npm:types-react@19.0.0-alpha.5"
@@ -42,10 +41,9 @@
       "@bureaudouble-forks/importmap@0.2.1": {
         "integrity": "ba78361d289f946e9c2488066b339553576392c5780b151cdd4c01da0c58f131"
       },
-      "@bureaudouble/outils@0.0.78": {
-        "integrity": "55f93f66c9df53e88113f02e19e32363d412487c7c74d88fb097a94271da4e4a",
+      "@bureaudouble/outils@0.0.79": {
+        "integrity": "258665f9fd61899ac59610872553293bc44dabce6e5dec96679116539b8b6b9d",
         "dependencies": [
-          "jsr:@bureaudouble/scripted@0.0.2",
           "jsr:@std/path@0.224",
           "npm:autoprefixer@10.4.19",
           "npm:cssnano@6.1.2",
@@ -54,8 +52,8 @@
           "npm:tailwindcss@^3.4.3"
         ]
       },
-      "@bureaudouble/rsc-engine@0.0.89": {
-        "integrity": "a9e87ad9abaf883a6703a65f24eec77774fb0d163442500ad1bf190bfacf9b53",
+      "@bureaudouble/rsc-engine@0.0.90": {
+        "integrity": "fc67f72131c17282df16fde6d5e9c797aef7ba4f86f6e2ce244a687072a505f8",
         "dependencies": [
           "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+nestarz.quiet.0.0.3",
           "jsr:@bureaudouble-forks/importmap@0.2.1",
@@ -1333,8 +1331,8 @@
   "workspace": {
     "dependencies": [
       "jsr:@bureaudouble-forks/react-error-boundary@0.0.1",
-      "jsr:@bureaudouble/outils@0.0.78",
-      "jsr:@bureaudouble/rsc-engine@0.0.89",
+      "jsr:@bureaudouble/outils@0.0.79",
+      "jsr:@bureaudouble/rsc-engine@0.0.90",
       "jsr:@fartlabs/rt@0.0.3",
       "jsr:@std/path@0.224",
       "npm:@tailwindcss/typography@^0.5.10",

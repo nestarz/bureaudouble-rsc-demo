@@ -5,10 +5,8 @@ import { Footer } from "@/app/components/footer.tsx";
 type RootLayoutProps = { children?: JSX.Element | JSX.Element[] };
 
 export const tailwindClient = await createTailwindClient({
-  namespace: "default",
-  baseUrl: new URL(".", import.meta.url).href,
   tailwindConfig: (importNSA) => importNSA("@/tailwind.config.ts"),
-  outDirectory: "../../build/.tailwind/",
+  outDirectoryURL: import.meta.resolve("@/build/.tailwind/"),
 });
 
 export default async function RootLayout({ children }: RootLayoutProps) {
