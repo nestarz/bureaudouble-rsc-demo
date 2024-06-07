@@ -6,7 +6,7 @@ type RootLayoutProps = { children?: JSX.Element | JSX.Element[] };
 
 export const tailwindClient = await createTailwindClient({
   tailwindConfig: (importNSA) => importNSA("@/tailwind.config.ts"),
-  outDirectoryURL: import.meta.resolve("../../build/.tailwind/"),
+  outDirectoryURL: import.meta.resolve("@/build/.tailwind/"),
 });
 
 export default async function RootLayout({ children }: RootLayoutProps) {
