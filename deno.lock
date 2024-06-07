@@ -2,8 +2,9 @@
   "version": "3",
   "packages": {
     "specifiers": {
-      "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+nestarz.quiet.0.0.3": "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+nestarz.quiet.0.0.3",
+      "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+nestarz.quiet.0.0.3": "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+pr0.0.4",
       "jsr:@bureaudouble-forks/importmap@0.2.1": "jsr:@bureaudouble-forks/importmap@0.2.1",
+      "jsr:@bureaudouble/outils@0.0.84": "jsr:@bureaudouble/outils@0.0.84",
       "jsr:@bureaudouble/rsc-engine@0.0.95": "jsr:@bureaudouble/rsc-engine@0.0.95",
       "jsr:@bureaudouble/scripted@0.0.2": "jsr:@bureaudouble/scripted@0.0.2",
       "jsr:@fartlabs/rt@0.0.3": "jsr:@fartlabs/rt@0.0.3",
@@ -37,8 +38,23 @@
           "jsr:@std/path@0.213"
         ]
       },
+      "@bureaudouble-forks/esbuild-deno-loader@0.10.3+pr0.0.4": {
+        "integrity": "b4e6ee566f745c6b1ebe7b606535954b2c66b5ff440ca96ed58aa19e4b988fd8",
+        "dependencies": [
+          "jsr:@std/encoding@0.213",
+          "jsr:@std/jsonc@0.213",
+          "jsr:@std/path@0.213"
+        ]
+      },
       "@bureaudouble-forks/importmap@0.2.1": {
         "integrity": "ba78361d289f946e9c2488066b339553576392c5780b151cdd4c01da0c58f131"
+      },
+      "@bureaudouble/outils@0.0.84": {
+        "integrity": "77ce4e492f017408b27150daf5bf3844b1b35785e2ef200614eaa6e2b92c2408",
+        "dependencies": [
+          "jsr:@std/path@0.224",
+          "npm:mrmime@2.0.0"
+        ]
       },
       "@bureaudouble/rsc-engine@0.0.95": {
         "integrity": "35582ddf5eaf72a2db39ab41f3aad2bf34726dc7edc0428b6f1b613d6b50bb85",
@@ -1319,7 +1335,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@bureaudouble-forks/react-error-boundary@0.0.1",
-      "jsr:@bureaudouble/outils@0.0.83",
+      "jsr:@bureaudouble/outils@0.0.84",
       "jsr:@bureaudouble/rsc-engine@0.0.95",
       "jsr:@fartlabs/rt@0.0.3",
       "jsr:@std/path@0.224",

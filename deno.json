@@ -23,7 +23,7 @@
     "@/": "./",
     "@bureaudouble/rsc-engine": "jsr:@bureaudouble/rsc-engine@0.0.95",
     "@bureaudouble/rsc-engine/": "jsr:/@bureaudouble/rsc-engine@0.0.95/",
-    "@bureaudouble/outils/": "jsr:/@bureaudouble/outils@0.0.83/",
+    "@bureaudouble/outils/": "jsr:/@bureaudouble/outils@0.0.84/",
     "@fartlabs/rt": "jsr:@fartlabs/rt@0.0.3",
     "@std/path/": "jsr:/@std/path@0.224/",
     "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.10",
