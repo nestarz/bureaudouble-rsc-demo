@@ -8,7 +8,7 @@ export const tailwindClient = await createTailwindClient({
   namespace: "default",
   baseUrl: new URL(".", import.meta.url).href,
   tailwindConfig: (importNSA) => importNSA("@/tailwind.config.ts"),
-  outDirectory: "./build/.tailwind/",
+  outDirectory: "../../build/.tailwind/",
 });
 
 export default async function RootLayout({ children }: RootLayoutProps) {
