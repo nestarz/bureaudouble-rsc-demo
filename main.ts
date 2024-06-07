@@ -2,6 +2,7 @@ import { createRouter } from "@fartlabs/rt";
 import { setupClientComponents } from "@bureaudouble/rsc-engine";
 import { createStaticHandler } from "@bureaudouble/outils/routes/createStaticHandler.ts";
 import { withRouteContext } from "@/app/components/route-context.tsx";
+import { tailwindClient } from "@/app/utils/tailwind.ts";
 
 const clientRsc = await setupClientComponents({
   minify: !Deno.env.get("DEV_ENV"),
@@ -13,14 +14,13 @@ const clientRsc = await setupClientComponents({
   external: [],
 });
 
-const layout = await import("@/app/pages/_layout.tsx");
 const index = await import("@/app/pages/index.tsx").then((v) => () => v);
 const about = await import("@/app/pages/about.tsx").then((v) => () => v);
 const actions = () => Promise.reject("'use server only'");
 
 const router = createRouter()
   .with(clientRsc.route)
-  .get("/styles/:id", layout.tailwindClient.getResponse)
+  .get("/styles/:id", tailwindClient.getResponse)
   .get("/static/*", createStaticHandler({ baseUrl: import.meta.url }))
   .use(
     (
