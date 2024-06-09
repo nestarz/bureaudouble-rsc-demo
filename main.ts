@@ -1,6 +1,7 @@
 import { createRouter } from "@fartlabs/rt";
 import { setupClientComponents } from "@bureaudouble/rsc-engine";
 import { createStaticHandler } from "@bureaudouble/outils/routes/createStaticHandler.ts";
+import { createHmrRouter } from "@bureaudouble/outils/routes/createHmrRouter.ts";
 import { withRouteContext } from "@/app/components/route-context.tsx";
 import { tailwindClient } from "@/app/utils/tailwind.ts";
 
@@ -20,6 +21,14 @@ const actions = () => Promise.reject("'use server only'");
 
 const router = createRouter()
   .with(clientRsc.route)
+  .use(
+    createHmrRouter({
+      hmrEventName: clientRsc.hmrRebuildEventName,
+      clientHmrEventName: "hmr",
+      path: "/__hmr",
+      mode: "event",
+    }),
+  )
   .get("/styles/:id", tailwindClient.getResponse)
   .get("/static/*", createStaticHandler({ baseUrl: import.meta.url }))
   .use(
