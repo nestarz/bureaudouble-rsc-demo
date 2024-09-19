@@ -7,7 +7,6 @@ import { tailwindClient } from "@/app/utils/tailwind.ts";
 const clientRsc = await setupClientComponents({
   entryPoint: import.meta.url,
   bootstrapModules: [import.meta.resolve("@bureaudouble/rsc-engine/client")],
-  clientImports: { imports: { "@bureaudouble/bureau": "npm:noop-tag" } },
 });
 
 const router = createRouter()
