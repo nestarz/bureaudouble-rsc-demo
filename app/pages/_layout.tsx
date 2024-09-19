@@ -1,4 +1,4 @@
-import { hmrGranted } from "@bureaudouble/outils/routes/createHmrRouter.ts";
+import { getHmrScriptPath } from "@bureaudouble/outils/routes/createHmrRouter.ts";
 import { Header } from "@/app/components/header.tsx";
 import { Footer } from "@/app/components/footer.tsx";
 import { tailwindClient } from "@/app/utils/tailwind.ts";
@@ -8,12 +8,14 @@ type RootLayoutProps = { children?: JSX.Element | JSX.Element[] };
 export default async function RootLayout({ children }: RootLayoutProps) {
   const data = await getData();
   const tailwind = await tailwindClient.getOutput();
+  const hmrScriptPath = getHmrScriptPath();
 
   return (
     <html>
       <head>
         <link rel="stylesheet" href={`/styles/${tailwind.id}`} />
-        {hmrGranted && <script src="/__hmr.js" defer async />}
+        <link rel="icon" type="image/png" href="/public/images/favicon.png" />
+        {hmrScriptPath && <script src={hmrScriptPath} defer async />}
       </head>
       <body>
         <div className="font-['Nunito']">

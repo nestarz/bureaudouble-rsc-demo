@@ -1,49 +1,25 @@
 import { createRouter } from "@fartlabs/rt";
 import { setupClientComponents } from "@bureaudouble/rsc-engine";
 import { createStaticHandler } from "@bureaudouble/outils/routes/createStaticHandler.ts";
-import { createHmrRouter } from "@bureaudouble/outils/routes/createHmrRouter.ts";
-import { withRouteContext } from "@/app/components/route-context.tsx";
+import { createHmr } from "@bureaudouble/outils/routes/createHmrRouter.ts";
 import { tailwindClient } from "@/app/utils/tailwind.ts";
 
 const clientRsc = await setupClientComponents({
-  minify: !Deno.env.get("DEV_ENV"),
-  namespace: "default",
   entryPoint: import.meta.url,
-  moduleBaseURL: import.meta.resolve("./"),
-  importMap: import.meta.resolve("./deno.json"),
-  bootstrapModules: [import.meta.resolve("./app/client.tsx")],
-  external: [],
+  bootstrapModules: [import.meta.resolve("@bureaudouble/rsc-engine/client")],
+  clientImports: { imports: { "@bureaudouble/bureau": "npm:noop-tag" } },
 });
 
-const index = await import("@/app/pages/index.tsx").then((v) => () => v);
-const about = await import("@/app/pages/about.tsx").then((v) => () => v);
-const actions = () => Promise.reject("'use server only'");
-
 const router = createRouter()
+  .use(createHmr({ name: clientRsc.hmrRebuildEventName, mode: "event" }).router)
   .with(clientRsc.route)
-  .use(
-    createHmrRouter({
-      hmrEventName: clientRsc.hmrRebuildEventName,
-      clientHmrEventName: "hmr",
-      path: "/__hmr",
-      mode: "event",
-    }),
-  )
   .get("/styles/:id", tailwindClient.getResponse)
-  .get("/static/*", createStaticHandler({ baseUrl: import.meta.url }))
+  .get("/public/*", createStaticHandler({ baseUrl: import.meta.url }))
   .use(
-    (
-      [
-        { method: "GET", pathname: "/", handle: index },
-        { method: "GET", pathname: "/about{/}?", handle: about },
-        { method: "POST", pathname: "/actions{/}?", handle: actions },
-      ] as const
-    )
-      .map(({ method, handle, pathname }) => ({
-        match: { method, pattern: new URLPattern({ pathname }) },
-        handle: clientRsc.render(withRouteContext(handle)),
-      }))
-      .flatMap(({ match, handle }) => [{ match, handle }]),
+    clientRsc.createRscRoutes({
+      "/": import("@/app/pages/index.tsx"),
+      "/about{/}?": import("@/app/pages/about.tsx"),
+    }),
   )
   .default(() => new Response("Not found", { status: 404 }))
   .error(
@@ -52,7 +28,6 @@ const router = createRouter()
 
 Deno.args.some((v) => v === "build")
   ? Deno.exit(0)
-  : Deno.serve({ port: 61616 }, (request) => router.fetch(request));
-
-// server actions needs to be statically analyzable
-(() => import("@/app/actions/incrementLike.ts"));
+  : Deno.serve((request, serveHandlerInfo) =>
+    router.fetch(request, undefined, { serveHandlerInfo })
+  );
