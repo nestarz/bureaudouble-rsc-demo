@@ -59,6 +59,9 @@
   "scopes": {
     "./": {
       "react": "https://jsr.io/@bureaudouble/rsc-engine/0.0.146/lib/utils/react.forker.ts"
+    },
+    "https://jsr.io/@bureaudouble/rsc-engine/0.0.146/lib/utils/react.forker.ts": {
+      "npm:react@19.0.0-rc.0": "npm:react@19.0.0-rc.0"
     }
   }
 }
