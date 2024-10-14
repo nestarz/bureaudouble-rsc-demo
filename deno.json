@@ -28,7 +28,8 @@
     "@types/react-dom": "npm:types-react-dom@alpha",
     "react": "npm:react@19.0.0-rc.0",
     "react-dom": "npm:react-dom@19.0.0-rc.0",
-    "tailwindcss": "npm:tailwindcss@^3.4.13"
+    "tailwindcss": "npm:tailwindcss@^3.4.13",
+    "npm:react@19.0.0-rc.0": "https://jsr.io/@bureaudouble/rsc-engine/0.0.146/lib/utils/react.forker.ts"
   },
   "shadcn-ui": {
     "moduleResolution": "NodeNext",
@@ -53,6 +54,11 @@
         "components": "@/app/components",
         "utils": "@bureaudouble/outils/cn.ts"
       }
+    }
+  },
+  "scopes": {
+    "./": {
+      "react": "https://jsr.io/@bureaudouble/rsc-engine/0.0.146/lib/utils/react.forker.ts"
     }
   }
 }
