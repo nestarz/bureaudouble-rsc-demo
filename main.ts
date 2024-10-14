@@ -1,21 +1,23 @@
 import { createRouter } from "@fartlabs/rt";
-import { setupClientComponents } from "@bureaudouble/rsc-engine";
+import {
+  hmrRebuildEventName,
+  setupClientAndActions,
+} from "@bureaudouble/rsc-engine";
 import { createStaticHandler } from "@bureaudouble/outils/routes/createStaticHandler.ts";
 import { createHmr } from "@bureaudouble/outils/routes/createHmrRouter.ts";
 import { tailwindClient } from "@/app/utils/tailwind.ts";
 
-const clientRsc = await setupClientComponents({
+const clientAndActions = await setupClientAndActions({
   entryPoint: import.meta.url,
   bootstrapModules: [import.meta.resolve("@bureaudouble/rsc-engine/client")],
 });
 
 const router = createRouter()
-  .use(createHmr({ name: clientRsc.hmrRebuildEventName, mode: "event" }).router)
-  .with(clientRsc.route)
+  .use(createHmr({ name: hmrRebuildEventName, mode: "event" }).router)
   .get("/styles/:id", tailwindClient.getResponse)
   .get("/public/*", createStaticHandler({ baseUrl: import.meta.url }))
   .use(
-    clientRsc.createRscRoutes({
+    clientAndActions({
       "/": import("@/app/pages/index.tsx"),
       "/about{/}?": import("@/app/pages/about.tsx"),
     }),
