@@ -3,7 +3,9 @@
     "start": "deno run -A --unstable-hmr --no-clear-screen --unstable-kv --unstable-temporal --env main.ts",
     "shadcn": "deno run --allow-write --allow-run --allow-read jsr:@bureaudouble/outils/shadcn.ts"
   },
-  "unstable": ["temporal"],
+  "unstable": [
+    "temporal"
+  ],
   "vendor": true,
   "compilerOptions": {
     "lib": [
@@ -19,23 +21,26 @@
   },
   "imports": {
     "@/": "./",
-    "@bureaudouble/rsc-engine": "jsr:@bureaudouble/rsc-engine@0.0.146",
-    "@bureaudouble/outils": "jsr:@bureaudouble/outils@0.0.94",
+    "@bureaudouble/rsc-engine": "jsr:@bureaudouble/rsc-engine@0.1.28",
+    "@bureaudouble/outils": "jsr:@bureaudouble/outils@0.0.104",
     "@fartlabs/rt": "jsr:@fartlabs/rt@0.0.3",
     "@std/path": "jsr:@std/path@^1.0.6",
     "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.10",
-    "@types/react": "npm:types-react@alpha",
-    "@types/react-dom": "npm:types-react-dom@alpha",
-    "react": "npm:react@19.0.0-rc.0",
-    "react-dom": "npm:react-dom@19.0.0-rc.0",
-    "tailwindcss": "npm:tailwindcss@^3.4.13",
-    "npm:react@19.0.0-rc.0": "https://jsr.io/@bureaudouble/rsc-engine/0.0.146/lib/utils/react.forker.ts"
+    "@types/react": "npm:types-react@^19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@^19.0.0",
+    "react": "jsr:@bureaudouble-forks/react@^19.0.0-forks.6",
+    "react-dom": "npm:react-dom@19.0.0",
+    "tailwindcss": "npm:tailwindcss@^4.0.9",
+    "react-server-dom-esm": "jsr:@bureaudouble-forks/react-server-dom-esm@^19.0.0-forks.2",
+    "@bureaudouble/rsc-html-stream": "jsr:@bureaudouble/rsc-html-stream@^0.0.2"
   },
   "shadcn-ui": {
     "moduleResolution": "NodeNext",
     "compilerOptions": {
       "paths": {
-        "@/*": ["./*"]
+        "@/*": [
+          "./*"
+        ]
       }
     },
     "components": {
@@ -54,14 +59,6 @@
         "components": "@/app/components",
         "utils": "@bureaudouble/outils/cn.ts"
       }
-    }
-  },
-  "scopes": {
-    "./": {
-      "react": "https://jsr.io/@bureaudouble/rsc-engine/0.0.146/lib/utils/react.forker.ts"
-    },
-    "https://jsr.io/@bureaudouble/rsc-engine/0.0.146/lib/utils/react.forker.ts": {
-      "npm:react@19.0.0-rc.0": "npm:react@19.0.0-rc.0"
     }
   }
 }
