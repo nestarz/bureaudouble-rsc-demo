@@ -42,6 +42,7 @@
     "npm:acorn-loose@^8.4.0": "8.4.0",
     "npm:babel-plugin-react-compiler@^19.0.0-beta-e1e972c-20250221": "19.0.0-beta-e552027-20250112",
     "npm:clsx@^2.1.1": "2.1.1",
+    "npm:core-js@^3.41.0": "3.41.0",
     "npm:cssnano@^7.0.6": "7.0.6_postcss@8.5.3",
     "npm:esbuild@0.21.4": "0.21.4",
     "npm:esbuild@0.24.0": "0.24.0",
@@ -1340,6 +1341,9 @@
     },
     "convert-source-map@2.0.0": {
       "integrity": "sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg=="
+    },
+    "core-js@3.41.0": {
+      "integrity": "sha512-SJ4/EHwS36QMJd6h/Rg+GyR4A5xE0FSI3eZ+iBVpfqf1x0eTSg1smWLHrA+2jQThZSh97fmSgFSU8B61nxosxA=="
     },
     "cross-spawn@7.0.6": {
       "integrity": "sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==",
@@ -2755,6 +2759,7 @@
       "jsr:@bureaudouble/rsc-html-stream@^0.0.2",
       "jsr:@std/path@^1.0.6",
       "npm:@tailwindcss/typography@~0.5.10",
+      "npm:core-js@^3.41.0",
       "npm:react-dom@19.0.0",
       "npm:tailwindcss@^4.0.12",
       "npm:types-react-dom@19",

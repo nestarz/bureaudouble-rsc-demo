@@ -29,6 +29,7 @@
     "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.10",
     "@types/react": "npm:types-react@^19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@^19.0.0",
+    "core-js": "npm:core-js@^3.41.0",
     "react": "jsr:@bureaudouble-forks/react@^19.0.0-forks.6",
     "react-dom": "npm:react-dom@19.0.0",
     "tailwindcss": "npm:tailwindcss@^4.0.12",
