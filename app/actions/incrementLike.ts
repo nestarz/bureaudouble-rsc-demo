@@ -1,8 +1,16 @@
 "use server";
 
-const kv = await Deno.openKv();
+const cacheName = "likesCache";
+const cache = await caches.open(cacheName);
+const key = new URL("https://localhost");
+
+export const getLikes = async () => {
+  const cachedResponse = await cache.match(key);
+  return await cachedResponse?.json() ?? 0;
+};
+
 export default async function incrementLike() {
-  const likeCount = (await kv.get<number>(["likes"])).value ?? 0;
-  await kv.set(["likes"], likeCount + 1);
+  const likeCount = await getLikes();
+  await cache.put(key, Response.json(likeCount + 1));
   return likeCount + 1;
 }

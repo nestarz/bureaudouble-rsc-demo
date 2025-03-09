@@ -1,6 +1,7 @@
 import { LikeButton } from "@/app/components/like-button.tsx";
 import RootLayout from "@/app/pages/_layout.tsx";
 import { cache } from "react";
+import { getLikes } from "@/app/actions/incrementLike.ts";
 
 export default async function HomePage() {
   const data = await getData();
@@ -19,9 +20,8 @@ export default async function HomePage() {
   );
 }
 
-const kv = await Deno.openKv();
 const getData = cache(async () => {
-  const likeCount = (await kv.get<number>(["likes"])).value;
+  const likeCount = await getLikes();
   console.log("getData is now cached for this request.");
   const data = {
     title: "bureaudouble/rsc-engine",
