@@ -22,18 +22,17 @@
   },
   "imports": {
     "@/": "./",
-    "@bureaudouble/routeur": "jsr:@bureaudouble/routeur@^0.1.6",
-    "@bureaudouble/rsc-engine": "jsr:@bureaudouble/rsc-engine@0.1.36",
-    "@bureaudouble/outils": "jsr:@bureaudouble/outils@0.0.108",
-    "@std/path": "jsr:@std/path@^1.0.6",
+    "@bureaudouble/routeur": "jsr:@bureaudouble/routeur@^0.1.8",
+    "@bureaudouble/rsc-engine": "jsr:@bureaudouble/rsc-engine@0.1.53",
+    "@bureaudouble/outils": "jsr:@bureaudouble/outils@0.0.125",
+    "@std/path": "jsr:@std/path@^1.0.9",
+    "@tailwindcss/postcss": "npm:@tailwindcss/postcss@^4.1.7",
     "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.10",
-    "@types/react": "npm:types-react@^19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@^19.0.0",
-    "core-js": "npm:core-js@^3.41.0",
-    "react": "jsr:@bureaudouble-forks/react@^19.0.0-forks.6",
-    "react-dom": "npm:react-dom@19.0.0",
-    "tailwindcss": "npm:tailwindcss@^4.0.12",
-    "react-server-dom-esm": "jsr:@bureaudouble-forks/react-server-dom-esm@^19.0.0-forks.2",
+    "core-js": "npm:core-js@^3.42.0",
+    "react": "jsr:@bureaudouble-forks/react@^19.1.0-forks.1",
+    "react-dom": "npm:react-dom@19.1.0",
+    "tailwindcss": "npm:tailwindcss@^4.1.7",
+    "react-server-dom-esm": "jsr:@bureaudouble-forks/react-server-dom-esm@^19.1.0-forks.1",
     "@bureaudouble/rsc-html-stream": "jsr:@bureaudouble/rsc-html-stream@^0.0.2"
   },
   "shadcn-ui": {
@@ -69,6 +68,8 @@
       "@/app/actions/incrementLike.ts": "/Users/elias/code/bureaudouble/bureaudouble-rsc-demo/build/references/proxy-incrementLike-75123a1a.ts"
     },
     "./app/pages/index.tsx": {
+      "/Users/elias/code/bureaudouble/bureaudouble-rsc-demo/app/actions/incrementLike.ts": "/Users/elias/code/bureaudouble/bureaudouble-rsc-demo/build/references/proxy-incrementLike-75123a1a.ts",
+      "@/app/actions/incrementLike.ts": "/Users/elias/code/bureaudouble/bureaudouble-rsc-demo/build/references/proxy-incrementLike-75123a1a.ts",
       "/Users/elias/code/bureaudouble/bureaudouble-rsc-demo/app/components/like-button.tsx": "/Users/elias/code/bureaudouble/bureaudouble-rsc-demo/build/references/proxy-like-button.entry.ts",
       "@/app/components/like-button.tsx": "/Users/elias/code/bureaudouble/bureaudouble-rsc-demo/build/references/proxy-like-button.entry.ts"
     }

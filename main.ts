@@ -1,5 +1,5 @@
-import { createRouter } from "@bureaudouble/routeur";
 import setupClientAndActions from "@bureaudouble/rsc-engine";
+import { createRouter } from "@bureaudouble/routeur";
 import { createStaticHandler } from "@bureaudouble/outils/routes/createStaticHandler.ts";
 import { createHmr } from "@bureaudouble/outils/routes/createHmrRouter.ts";
 import { tailwindClient } from "@/app/utils/tailwind.ts";

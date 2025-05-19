@@ -9,6 +9,7 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     permissions:
       id-token: write # Needed for auth with Deno Deploy

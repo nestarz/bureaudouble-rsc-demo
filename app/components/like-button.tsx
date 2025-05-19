@@ -23,6 +23,20 @@ export function LikeButton({ initialLikeCount }: { initialLikeCount: number }) {
       >
         Like
       </button>
+      <input
+        type="text"
+        onChange={(e) => {
+          const state = null;
+          const url = new URL(location.href);
+          url.searchParams.delete("name");
+          if (e.target.value.length > 0) {
+            url.searchParams.set("name", e.target.value);
+          }
+          globalThis.history.pushState(null, "", url);
+          const popStateEvent = new PopStateEvent("popstate", { state });
+          globalThis.dispatchEvent(popStateEvent);
+        }}
+      />
     </>
   );
 }

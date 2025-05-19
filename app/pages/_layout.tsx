@@ -3,7 +3,7 @@ import { Header } from "@/app/components/header.tsx";
 import { Footer } from "@/app/components/footer.tsx";
 import { tailwindClient } from "@/app/utils/tailwind.ts";
 
-type RootLayoutProps = { children?: JSX.Element | JSX.Element[] };
+type RootLayoutProps = { children?: React.ReactNode };
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   const data = await getData();
